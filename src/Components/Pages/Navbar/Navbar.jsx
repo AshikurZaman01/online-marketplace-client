@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FiMenu } from 'react-icons/fi';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import Login from '../../UserLoginANdRegister/Login';
@@ -65,7 +65,9 @@ const Navbar = () => {
             <nav>
                 <div className='flex h-[10vh] items-center justify-between z-50 lg:py-5 px-10 py-4 flex-1 bg-slate-900 text-white'>
                     <div className='flex items-center flex-1'>
-                        <span className='text-3xl font-bold'>LOGO</span>
+                        <Link to={'/'}>
+                            <span className='text-3xl font-bold'>Iber</span>
+                        </Link>
                     </div>
 
                     <div className='lg:flex md:flex lg:flex-1 md:flex-1 items-center justify-end'>
