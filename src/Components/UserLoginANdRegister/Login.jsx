@@ -29,7 +29,7 @@ const Login = () => {
                             </div>
                             <input type="password" placeholder="Password" className="w-full md:w-80 text-slate-800 py-2 px-12 rounded-full focus:bg-black-dark focus:outline-none focus:ring-1 focus:ring-neon-blue focus:drop-shadow-lg" />
                         </div>
-                        <button type="submit" className="bg-gradient-to-r from-blue-400 to-cyan-200 w-full md:w-80 font-semibold rounded-full py-2">Sign in</button>
+                        <button type="submit" className="bg-gradient-to-r from-blue-400 to-cyan-200 w-full md:w-80 font-semibold rounded-full py-2">Login</button>
                     </form>
                     <div className="text-dull-white border-t border-white-light pt-4 space-y-4 text-sm">
                         <p>Don't have an account? <Link to={'/register'} className="text-blue-700 font-bold cursor-pointer">Sign up</Link></p>
