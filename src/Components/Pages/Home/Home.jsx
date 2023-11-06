@@ -1,8 +1,8 @@
 
 const Home = () => {
     return (
-        <div>
-this is home
+        <div className="bg-red-500 h-screen">
+            this is home
         </div>
     );
 };
