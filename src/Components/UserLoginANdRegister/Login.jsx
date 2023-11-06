@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
-import logo from "../../Images/Animation - 1699276752973.json";
+import logo from "../../Images/login.json";
 
 const Login = () => {
     return (

@@ -11,12 +11,11 @@ const Register = () => {
                         <div className="max-w-[300px] mx-auto">
                             <Lottie className="w-full" animationData={logo} loop={true} />
                         </div>
-                        <img src="assets/teamwork.svg" alt="" className="md:absolute md:top-36" />
                     </div>
 
                     <div className="max-w-80 grid gap-5">
                         <h1 className="text-3xl md:text-5xl font-bold text-slate-800">Register</h1>
-                        <p className="text-slate-800 font-bold">Get access to 3000+ jobs, projects, and clients</p>
+                        <p className="text-slate-800 font-bold">Register and never look back!</p>
                         <form className="space-y-6 text-white">
                             <div className="relative">
                                 <div className="absolute top-1 left-1 bg-white-medium rounded-full p-2 flex items-center justify-center text-blue-300">
