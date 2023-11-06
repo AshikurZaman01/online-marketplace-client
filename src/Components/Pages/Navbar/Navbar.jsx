@@ -12,7 +12,7 @@ const Navbar = () => {
     };
 
     const listItems = (
-        <div className='lg:hidden  block absolute top-16 left-0 right-0 bg-slate-800'>
+        <div className='lg:hidden z-50 block absolute top-16 left-0 right-0 bg-slate-800'>
             <ul className='text-center text-xl p-20'>
                 <NavLink to='/'>
                     <li className='my-4 border-b border-slate-700 hover:bg-slate-600 hover:rounded'>Home</li>

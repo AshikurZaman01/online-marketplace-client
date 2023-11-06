@@ -14,6 +14,8 @@ import Mybids from './Components/Pages/MyBids/Mybids';
 import BidRequest from './Components/Pages/BidRequest/BidRequest';
 import Login from './Components/UserLoginANdRegister/Login';
 import Register from './Components/UserLoginANdRegister/Register';
+import AuthProvider from './firebase/AuthProvider';
+import { Toaster } from 'react-hot-toast';
 
 const router = createBrowserRouter([
   {
@@ -57,6 +59,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-        <RouterProvider router={router}></RouterProvider>
+    <AuthProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </AuthProvider>
+    <Toaster />
   </React.StrictMode>
 )
