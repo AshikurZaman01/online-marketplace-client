@@ -10,7 +10,8 @@ import CommonLogin from "../CommonLogin/CommonLogin";
 const Register = () => {
 
 
-    const { user, createUser } = useContext(AuthContext);
+
+    const { user, createUser } = useContext(AuthContext)
 
     const location = useLocation();
     const navigate = useNavigate();

@@ -4,7 +4,6 @@ import { AuthContext } from "../../../firebase/AuthProvider";
 const AddJob = () => {
 
     const { user } = useContext(AuthContext)
-    console.log(user?.email)
 
 
     const categpries = [

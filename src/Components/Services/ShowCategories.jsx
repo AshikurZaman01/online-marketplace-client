@@ -6,7 +6,7 @@ const ShowCategories = () => {
     const jobsData = useLoaderData();
     const cate = useParams()
 
-    const jobsFilter = jobsData.filter((jobs) => jobs.Category === cate.category)
+    const jobsFilter = jobsData.filter((jobs) => jobs.category === cate.category)
 
     console.log(jobsFilter.length)
 

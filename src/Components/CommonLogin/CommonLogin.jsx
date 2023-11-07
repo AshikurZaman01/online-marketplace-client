@@ -26,7 +26,7 @@ const CommonLogin = () => {
 
 
     return (
-        <div className="">
+        <div>
 
             <button className=" bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 p-1 rounded-full my-4 w-[300px]  btn-primary mx-auto  block text-xl btn" onClick={handleGoogleLogin}>Google</button>
         </div>
