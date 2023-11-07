@@ -8,7 +8,7 @@ const Alljobs = ({ jobs }) => {
     return (
         <div className='w-[70%] text-white  mx-auto border rounded p-4'>
 
-            <div className='flex items-center justify-between'>
+            <div className='flex md:flex-row flex-col gap-6 md:gap-0 items-center justify-between'>
 
                 <div className='w-[70%]'>
                     <h3>{Job_Title}</h3>

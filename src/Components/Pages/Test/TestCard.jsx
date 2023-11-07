@@ -1,15 +1,9 @@
-import { Link } from "react-router-dom";
+import React from 'react';
 
-const TestCard = ({ categori }) => {
-
-    const { category } = categori || {}
-
-
+const TestCard = () => {
     return (
         <div>
-            <Link to={`/brand/${category}`}>
-                <button>{category}</button>
-            </Link>
+            
         </div>
     );
 };
