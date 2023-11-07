@@ -18,6 +18,10 @@ import AuthProvider from './firebase/AuthProvider';
 import { Toaster } from 'react-hot-toast';
 import CommonLogin from './Components/CommonLogin/CommonLogin';
 import Footer from './Components/Pages/Footer/Footer';
+import Test from './Components/Pages/Test/Test';
+import Brand from './Components/Pages/Test/Brand';
+import Services from './Components/Services/Services';
+import ShowCategories from './Components/Services/ShowCategories';
 
 const router = createBrowserRouter([
   {
@@ -60,6 +64,27 @@ const router = createBrowserRouter([
     {
       path: "/footer",
       element: <Footer></Footer>
+    },
+    {
+      path: "/services/:category",
+      element: <Services></Services>,
+      loader: () => fetch('http://localhost:3000')
+    },
+    {
+      path: "/showCategories/:category",
+      element: <ShowCategories></ShowCategories>,
+      loader: () => fetch('http://localhost:3000/jobs')
+
+    }
+      ,
+    {
+      path: "/test/:category",
+      element: <Test></Test>
+    },
+    {
+      path: "/brand/:category",
+      element: <Brand></Brand>,
+      loader: () => fetch('http://localhost:3000/jobs')
     }
     ]
   },

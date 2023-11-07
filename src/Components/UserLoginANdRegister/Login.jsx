@@ -69,7 +69,7 @@ const Login = () => {
                         <button type="submit" className="bg-gradient-to-r from-blue-400 to-cyan-200 w-full md:w-80 font-semibold rounded-full py-2">Login</button>
                     </form>
                     <div className="text-dull-white border-t border-white-light pt-4 space-y-4 text-sm">
-                        <p>Don't have an account? <Link to={'/register'} className="text-blue-700 font-bold cursor-pointer">Sign up</Link> Or, logi With <CommonLogin></CommonLogin></p>
+                        <p>Don't have an account? <Link to={'/register'} className="text-blue-700 font-bold cursor-pointer">Sign up</Link> Or, login With <CommonLogin></CommonLogin></p>
                     </div>
                 </div>
             </div>

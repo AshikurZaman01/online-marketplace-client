@@ -8,8 +8,6 @@ const Navbar = () => {
 
     const { user, logout } = useContext(AuthContext)
 
-    console.log(user)
-
     const [click, setClick] = useState(false);
 
     const handleClick = () => {

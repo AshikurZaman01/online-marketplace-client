@@ -1,5 +1,7 @@
-import Footer from "../Footer/Footer";
+import Alljobs from "../../Services/AllJobs/Alljobs";
+import Services from "../../Services/Services";
 import GetUpdated from "../GetUpdated/GetUpdated";
+import Test from "../Test/Test";
 import Banner from "./Banner";
 
 const Home = () => {
@@ -10,12 +12,19 @@ const Home = () => {
             </div>
 
             <div>
+                <Services></Services>
+            </div>
+
+
+
+            <div>
                 <GetUpdated></GetUpdated>
             </div>
 
-            <div>
 
-            </div>
+
+
+
         </div>
     );
 };
