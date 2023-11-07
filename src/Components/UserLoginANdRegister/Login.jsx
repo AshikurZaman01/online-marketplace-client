@@ -4,13 +4,15 @@ import logo from "../../Images/login.json";
 import { useContext } from "react";
 import { AuthContext } from "../../firebase/AuthProvider";
 import toast from "react-hot-toast";
+import CommonLogin from "../CommonLogin/CommonLogin";
 
 const Login = () => {
 
     const location = useLocation()
     const navigate = useNavigate()
 
-    const { signInUser } = useContext(AuthContext);
+    const { user, signInUser } = useContext(AuthContext);
+
 
 
     const handleSignIn = (e) => {
@@ -26,7 +28,10 @@ const Login = () => {
         signInUser(email, password)
             .then(res => {
                 console.log(res.user);
-                toast.success('logg in success..')
+                toast.success('logged in success..')
+                setTimeout(() => {
+                    toast.success('Welcome,', user?.displayName);
+                }, 2000);
                 navigate(location?.state ? location.state : '/');
             })
             .catch(err => {
@@ -64,7 +69,7 @@ const Login = () => {
                         <button type="submit" className="bg-gradient-to-r from-blue-400 to-cyan-200 w-full md:w-80 font-semibold rounded-full py-2">Login</button>
                     </form>
                     <div className="text-dull-white border-t border-white-light pt-4 space-y-4 text-sm">
-                        <p>Don't have an account? <Link to={'/register'} className="text-blue-700 font-bold cursor-pointer">Sign up</Link></p>
+                        <p>Don't have an account? <Link to={'/register'} className="text-blue-700 font-bold cursor-pointer">Sign up</Link> Or, logi With <CommonLogin></CommonLogin></p>
                     </div>
                 </div>
             </div>

@@ -16,6 +16,7 @@ import Login from './Components/UserLoginANdRegister/Login';
 import Register from './Components/UserLoginANdRegister/Register';
 import AuthProvider from './firebase/AuthProvider';
 import { Toaster } from 'react-hot-toast';
+import CommonLogin from './Components/CommonLogin/CommonLogin';
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       path: "/register",
       element: <Register></Register>
     },
+    {
+      path: "/commonlogin",
+      element: <CommonLogin></CommonLogin>
+    }
     ]
   },
 ]);

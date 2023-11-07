@@ -1,10 +1,15 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FiMenu } from 'react-icons/fi';
 import { AiFillCloseCircle } from 'react-icons/ai';
-import Login from '../../UserLoginANdRegister/Login';
+import { AuthContext } from '../../../firebase/AuthProvider';
 
 const Navbar = () => {
+
+    const { user, logout } = useContext(AuthContext)
+
+    console.log(user)
+
     const [click, setClick] = useState(false);
 
     const handleClick = () => {
@@ -39,26 +44,26 @@ const Navbar = () => {
 
     const userProfile = (
         <div>
-            <div className="dropdown dropdown-end rounded-full">
+            <div className="dropdown dropdown-end rounded-full ">
                 <label tabIndex={0}><div className="avatar">
-                    <div className="w-10 h-10    rounded-full">
-                        <img className='w-full h-full' src="https://images.unsplash.com/photo-1683009427660-b38dea9e8488?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8" />
+                    <div className="w-10 h-10  cursor-pointer  rounded-full">
+                        <img className='w-full h-full' src={user?.photoURL} />
                     </div>
                 </div></label>
                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-slate-600 rounded-box w-52">
                     <div className='text-center'>
-                        <h1 className=''>Name</h1>
-                        <h1 className=''>email</h1>
+                        <h1 className=''>{user?.displayName}</h1>
+                        <h1 className=''>{user?.email}</h1>
                     </div>
                     <div>
-                        <button className='text-center block w-full bg-slate-500 text-white hover:bg-slate-400 mt-4 btn-sm btn'>Logout</button>
+                        <button onClick={() => (logout())} className='text-center block w-full bg-slate-500 text-white hover:bg-slate-400 mt-4 btn-sm btn'>Logout</button>
                     </div>
                 </ul>
             </div>
         </div>
     );
 
-    const user = false;
+
 
     return (
         <div>
@@ -146,7 +151,7 @@ const Navbar = () => {
                     </div>
                     <div>
                         {
-                            user ? <span>{userProfile}</span> : <NavLink to={'/login'}> Login</NavLink>
+                            user?.email ? <span>{userProfile}</span> : <NavLink to={'/login'}> Login</NavLink>
                         }
                     </div>
                     <div>

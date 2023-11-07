@@ -5,10 +5,13 @@ import { useContext } from "react";
 import { AuthContext } from "../../firebase/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import toast from "react-hot-toast";
+import CommonLogin from "../CommonLogin/CommonLogin";
 
 const Register = () => {
 
-    const { createUser } = useContext(AuthContext);
+
+    const { user, createUser } = useContext(AuthContext);
+
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -21,7 +24,6 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        console.log(name, photoUrl, email, password);
 
         if (password.length < 6) {
             toast.error('Password must be at least 6 characters long');
@@ -42,6 +44,9 @@ const Register = () => {
                         .then(() => {
                             console.log('Profile Update');
                             toast.success('Registration Success');
+                            setTimeout(() => {
+                                toast.success('Welcome,', user?.displayName);
+                            }, 2000);
                             navigate(location?.state ? location.state : '/');
                         })
                         .catch((err) => {
@@ -99,7 +104,7 @@ const Register = () => {
                             <button type="submit" className="bg-gradient-to-r from-blue-400 to-cyan-200 w-full md:w-80 font-semibold rounded-full py-2">Register</button>
                         </form>
                         <div className="text-dull-white border-t border-white-light pt-4 space-y-4 text-sm">
-                            <p>Already have an account? <Link to={'/login'} className="text-blue-700 font-bold cursor-pointer">Sign In</Link></p>
+                            <p>Already have an account? <Link to={'/login'} className="text-blue-700 font-bold cursor-pointer">Sign In</Link> Or, register with <CommonLogin></CommonLogin></p>
                         </div>
                     </div>
                 </div>
