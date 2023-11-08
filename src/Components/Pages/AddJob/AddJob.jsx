@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../firebase/AuthProvider";
+import toast from "react-hot-toast";
 
 const AddJob = () => {
 
@@ -24,6 +25,7 @@ const AddJob = () => {
         const maxprice = form.maxprice.value;
         const minprice = form.minprice.value;
         const category = form.category.value;
+        const image = user?.photoURL;
 
         const jobsData = {
             name,
@@ -34,6 +36,7 @@ const AddJob = () => {
             maxprice,
             minprice,
             category,
+            image
         }
 
         console.log(jobsData)
@@ -48,7 +51,9 @@ const AddJob = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                alert('Job Added Successfully')
+                if (data.insertedId > 0) {
+                    toast.success('Job added successfully')
+                }
             })
             .catch(err => console.log(err))
     }

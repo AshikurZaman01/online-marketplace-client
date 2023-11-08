@@ -1,10 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Alljobs = ({ jobs }) => {
 
     const { _id, name, email, jobTitle, deadline, description, maxprice, minprice, category } = jobs || {};
 
 
+    console.log(jobs._id)
     return (
         <div className='w-[70%] text-white  mx-auto border rounded p-4'>
 
@@ -18,7 +20,8 @@ const Alljobs = ({ jobs }) => {
 
                 <div className='-w-[30%] ml-[50px] text-center'>
                     <p>{maxprice}-{minprice}</p>
-                    <button className='btn btn-sm my-3 hover:bg-slate-600 hover:text-white'>View Details</button>
+
+                    <Link to={`/viewJobs/${_id}`}><button className='btn btn-sm my-3 hover:bg-slate-600 hover:text-white'>View Details</button></Link>
                 </div>
             </div>
 

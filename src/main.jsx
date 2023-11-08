@@ -22,6 +22,8 @@ import Test from './Components/Pages/Test/Test';
 import Brand from './Components/Pages/Test/Brand';
 import Services from './Components/Services/Services';
 import ShowCategories from './Components/Services/ShowCategories';
+import ViewJobs from './Components/Services/AllJobs/ViewJobs';
+import BidNow from './Components/Services/BidNow/BidNow';
 
 const router = createBrowserRouter([
   {
@@ -74,7 +76,16 @@ const router = createBrowserRouter([
       path: "/showCategories/:category",
       element: <ShowCategories></ShowCategories>,
       loader: () => fetch('http://localhost:3000/jobs')
-
+    },
+    {
+      path: "/viewJobs/:id",
+      element: <ViewJobs></ViewJobs>,
+      loader: ({ params }) => fetch(`http://localhost:3000/jobs/${params.id}`)
+    },
+    {
+      path: "/bidNow/:id",
+      element: <BidNow></BidNow>,
+      loader: ({ params }) => fetch(`http://localhost:3000/jobs/${params.id}`)
     }
 
     ]
