@@ -18,8 +18,6 @@ import AuthProvider from './firebase/AuthProvider';
 import { Toaster } from 'react-hot-toast';
 import CommonLogin from './Components/CommonLogin/CommonLogin';
 import Footer from './Components/Pages/Footer/Footer';
-import Test from './Components/Pages/Test/Test';
-import Brand from './Components/Pages/Test/Brand';
 import Services from './Components/Services/Services';
 import ShowCategories from './Components/Services/ShowCategories';
 import ViewJobs from './Components/Services/AllJobs/ViewJobs';
@@ -40,7 +38,8 @@ const router = createBrowserRouter([
     },
     {
       path: "/myPostedJob",
-      element: <MyPOstedJob></MyPOstedJob>
+      element: <MyPOstedJob></MyPOstedJob>,
+
     },
     {
       path: "/myBids",

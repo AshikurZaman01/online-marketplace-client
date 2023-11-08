@@ -6,7 +6,6 @@ const Alljobs = ({ jobs }) => {
     const { _id, name, email, jobTitle, deadline, description, maxprice, minprice, category } = jobs || {};
 
 
-    console.log(jobs._id)
     return (
         <div className='w-[70%] text-white  mx-auto border rounded p-4'>
 

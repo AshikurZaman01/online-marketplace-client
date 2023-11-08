@@ -1,7 +1,5 @@
-import Alljobs from "../../Services/AllJobs/Alljobs";
 import Services from "../../Services/Services";
 import GetUpdated from "../GetUpdated/GetUpdated";
-import Test from "../Test/Test";
 import Banner from "./Banner";
 
 const Home = () => {
