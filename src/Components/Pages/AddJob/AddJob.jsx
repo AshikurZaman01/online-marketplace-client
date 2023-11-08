@@ -51,11 +51,14 @@ const AddJob = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.insertedId > 0) {
-                    toast.success('Job added successfully')
+                if (data.insertedId) {
+                    toast.success('Job added successfully');
                 }
             })
-            .catch(err => console.log(err))
+            .catch(err => {
+                console.log(err);
+                toast.error('Error');
+            })
     }
 
     return (
@@ -67,19 +70,19 @@ const AddJob = () => {
 
             <form onSubmit={handleAddJob} className="w-[80%] mx-auto my-10">
 
-                <div className="grid grid-cols-2 gap-5">
+                <div className="grid grid-cols-2 gap-5 disabled">
                     <input
                         type="text"
-                        className="rounded border text-slate-800 border-gray-500 px-4 py-2 focus:outline-none focus:border-purple-500"
+                        className="rounded  border text-slate-800 border-gray-500 px-4 py-2 focus:outline-none focus:border-purple-500"
                         placeholder="Name"
-                        name="name"
+                        name="name" disabled
                         defaultValue={user?.displayName}
                     />
                     <input
                         type="email"
                         className="rounded border text-slate-800 border-gray-500 px-4 py-2 focus:outline-none focus:border-purple-500"
                         placeholder="Enter Your Email"
-                        name="email"
+                        name="email" disabled
                         defaultValue={user?.email}
                     />
                     <input

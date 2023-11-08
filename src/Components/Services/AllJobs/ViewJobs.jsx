@@ -5,8 +5,6 @@ import { AuthContext } from "../../../firebase/AuthProvider";
 const ViewJobs = () => {
 
     const { user } = useContext(AuthContext)
-    console.log(user?.email.toUpperCase())
-    console.log(user?.photoURL)
 
     const jobsData = useLoaderData()
 
