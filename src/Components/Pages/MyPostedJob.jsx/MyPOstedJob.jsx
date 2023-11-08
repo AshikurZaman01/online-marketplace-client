@@ -30,13 +30,17 @@ const MyPOstedJob = () => {
                 .then(data => {
                     console.log(data);
                     toast.success("Job Deleted Successfully!")
+                    const remaining = jobs.filter(job => job._id !== id);
+                    setJobs(remaining);
                 })
                 .catch((err) => {
                     console.log(err);
-                    toast.error("Error Deleting Job!")
+                    toast.error("Error Deleting Job!");
+
                 })
         }
     }
+
 
 
     return (

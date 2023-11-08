@@ -26,7 +26,10 @@ const PostedJobsCard = ({ job, handleDelete }) => {
                         <Link to={`/viewJobs/${_id}`}><button className='btn btn-sm my-3 hover:bg-slate-600 hover:text-white'>View Details</button></Link>
 
                         <div className="flex gap-6">
-                            <button className="btn btn-xs my-3 bg-green-600 text-white hover:bg-slate-600 hover:text-white">Update</button>
+                            <Link to={`/updatesPostedJob/${_id}`}>
+                                <button className="btn btn-xs my-3 bg-green-600 text-white hover:bg-slate-600 hover:text-white">Update</button>
+                            </Link>
+
 
                             <button onClick={() => handleDelete(_id)} className="btn btn-xs my-3 bg-red-500 hover:bg-slate-600 hover:text-white">Delete</button>
                         </div>

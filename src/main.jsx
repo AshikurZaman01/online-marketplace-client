@@ -22,6 +22,7 @@ import Services from './Components/Services/Services';
 import ShowCategories from './Components/Services/ShowCategories';
 import ViewJobs from './Components/Services/AllJobs/ViewJobs';
 import BidNow from './Components/Services/BidNow/BidNow';
+import UpdatedPostedJob from './Components/Pages/MyPostedJob.jsx/UpdatedPostedJob';
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,11 @@ const router = createBrowserRouter([
       path: "/myPostedJob",
       element: <MyPOstedJob></MyPOstedJob>,
 
+    },
+    {
+      path: "/updatesPostedJob/:id",
+      element: <UpdatedPostedJob></UpdatedPostedJob>,
+      loader: ({ params }) => fetch(`http://localhost:3000/jobs/${params.id}`)
     },
     {
       path: "/myBids",
