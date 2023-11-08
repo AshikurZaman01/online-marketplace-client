@@ -27,7 +27,9 @@ const BidNow = () => {
             bidder_deadline: deadline,
             bidder_email: user?.email,
             auther_email: email,
-            auther_price: { maxprice, minprice }
+            auther_price: { maxprice, minprice },
+            category,
+            jobTitle
         }
 
         console.log(bidData)
