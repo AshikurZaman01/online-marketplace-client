@@ -74,6 +74,7 @@ const BidNow = () => {
                         className="border text-slate-800 px-4 py-2 focus:outline-none focus:border-purple-500 col-span-1"
                         placeholder="Deadline"
                         name="deadline"
+                        defaultValue={deadline}
                     />
 
                 </div>

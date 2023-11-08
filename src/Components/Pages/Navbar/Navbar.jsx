@@ -1,11 +1,14 @@
 import { useContext, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { FiMenu } from 'react-icons/fi';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { AuthContext } from '../../../firebase/AuthProvider';
+import toast from 'react-hot-toast';
 
 const Navbar = () => {
 
+    const location = useLocation()
+    const navigate = useNavigate()
     const { user, logout } = useContext(AuthContext)
 
     const [click, setClick] = useState(false);
@@ -13,6 +16,15 @@ const Navbar = () => {
     const handleClick = () => {
         setClick(!click);
     };
+
+    const handleLogout = () => {
+        logout();
+        setClick(false);
+        toast.success("Logout Successfully");
+        navigate(location?.state ? location.state : '/');
+
+    }
+
 
     const listItems = (
         <div className='lg:hidden z-50 block absolute top-16 left-0 right-0 bg-slate-800'>
@@ -54,7 +66,7 @@ const Navbar = () => {
                         <h1 className=''>{user?.email}</h1>
                     </div>
                     <div>
-                        <button onClick={() => (logout())} className='text-center block w-full bg-slate-500 text-white hover:bg-slate-400 mt-4 btn-sm btn'>Logout</button>
+                        <button onClick={handleLogout} className='text-center block w-full bg-slate-500 text-white hover:bg-slate-400 mt-4 btn-sm btn'>Logout</button>
                     </div>
                 </ul>
             </div>
