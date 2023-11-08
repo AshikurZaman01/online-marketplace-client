@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../firebase/AuthProvider";
 import toast from "react-hot-toast";
 import CommonLogin from "../CommonLogin/CommonLogin";
+import axios from "axios";
 
 const Login = () => {
 
@@ -32,7 +33,19 @@ const Login = () => {
                 setTimeout(() => {
                     toast.success('Welcome,', user?.displayName);
                 }, 2000);
-                navigate(location?.state ? location.state : '/');
+                const loggedInUser = res.user;
+                console.log(loggedInUser)
+                const user = { email }
+
+                axios.post('http://localhost:3000/jwt', user, { withCredentials: true })
+                    .then((res) => {
+                        console.log(res.data);
+                        if (res.data.success) {
+                            navigate(location?.state ? location.state : '/');
+
+                        }
+
+                    })
             })
             .catch(err => {
                 toast.error('logg in failed..')

@@ -18,7 +18,6 @@ const Mybids = () => {
             .catch(err => console.log(err))
     }, [url])
 
-    console.log(bids)
 
     return (
         <div className="bg-slate-700 py-10">
